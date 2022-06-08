@@ -1,0 +1,22 @@
+{
+  "name": "login_node_cesar_jhonny",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cesarpalaciosr/Login_node_Cesar_Jhonny.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cesarpalaciosr/Login_node_Cesar_Jhonny/issues"
+  },
+  "homepage": "https://github.com/Cesarpalaciosr/Login_node_Cesar_Jhonny#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
