@@ -1,7 +1,17 @@
 const express = require('express')
 const app = express()
-const port = 3001
-const person_tb = require('./pgqueries')
+const port = 3000
+const person_tb = require('./server/utils/pgqueries')
+/*
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+  })
+  
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  })
+*/
+
 
 app.use(express.json())
 app.use(function (req, res, next) {
@@ -11,7 +21,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get('/', (req, res) => {H
+app.get('/', (req, res) => {
   person_tb.getPerson()
   .then(response => {
     res.status(200).send(response);
