@@ -26,4 +26,4 @@ function instance() {
     return pool;
 }
 
-export default pool;
+export default {pool, client};

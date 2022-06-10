@@ -6,11 +6,12 @@ const pool = new Pool({
   password: 'masterkey',
   port: 5432,
 });
-
+//'INSERT INTO persona (no_persona, ap_persona, ci_persona, sx_persona ) VALUES ($1, $2, $3,$4)'
 const createPerson = (body) => {
     return new Promise(function(resolve, reject) {
-      const { names, last_name, id, gender } = body
-      pool.query('INSERT INTO persona (no_persona, ap_persona, ci_persona, sx_persona ) VALUES ($1, $2, $3,$4)', [names, last_name, id, gender], (error, results) => {
+      const { names, age, username, email, password, id_person} = body
+      pool.query( 'INSERT INTO public.users (name, age, username, email, password, id_person) VALUES ($1, $2, $3, $4, $5, $6)', [names, age, username, email, password, id_person], (error, results) => {
+        
         if (error) {
           reject(error)
         }
@@ -29,8 +30,6 @@ const getPerson = () => {
         })
     }) 
 }
-
-
 
 const deletePerson = (id) => {
     return new Promise(function(resolve, reject) {
