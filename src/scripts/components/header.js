@@ -7,7 +7,7 @@ class head_page extends HTMLElement {
         this.innerHTML = `
             <section>
                 <div>
-                    <h1 class= "title">TWISTER</h1>
+                    <h1 class= "tittle">TWISTER</h1>
                 </div>
             </section>
             `   
