@@ -27,7 +27,7 @@ async function send(e) {
 
   if (response.status == 200) {
 	console.log(window.location)
-    window.location = window.location.origin +"./views/login.html";
+    window.location = "http://localhost:3000/views/login.html";
   } else {
     console.log("No se pudo Registrar los datos");
   }
