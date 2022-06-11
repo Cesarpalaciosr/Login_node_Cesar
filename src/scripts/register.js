@@ -1,5 +1,5 @@
-var registerForm = document.getElementById("data-form");
-var API_url = "localhost:3000/persona";
+var registerForm = document.getElementById("data-forms");
+var API_url = "http://localhost:3000/persona";
 
 
 registerForm.addEventListener("submit", send);
@@ -14,9 +14,15 @@ async function send(e) {
   console.log(data);
 
   var res = await fetch(API_url, {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
     method: "POST", // or 'PUT'
-    body: form,
+    
+    body:JSON.stringify(data),
   }).catch((error) => console.error("Error:", error));
+  
   var response = await res.json();
 
   if (response.status == 200) {
