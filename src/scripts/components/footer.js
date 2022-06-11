@@ -1,4 +1,4 @@
-class head_page extends HTMLElement {
+class foot_page extends HTMLElement {
     constructor(){
         super();
     }
@@ -7,11 +7,11 @@ class head_page extends HTMLElement {
         this.innerHTML = `
             <section>
                 <div>
-                    <h1 class= "title">TWISTER</h1>
+                    
                 </div>
             </section>
             `   
     }
 }
 
-window.customElements.define("head-page", head_page);
+window.customElements.define("foot-page", foot_page);
