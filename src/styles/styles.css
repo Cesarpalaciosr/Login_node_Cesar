@@ -40,10 +40,18 @@ body {
 .tittle{
   font-size: 40px;
   color: aliceblue;
-  padding: 10px 0px 10px 20px;
+  /*mix-blend-mode: screen;
+  background-color: white;*/
+  margin-left: 20px;
+  padding: 10px 15px 10px 15px;
 }
 
-
+.division{border-width: 1px;
+  border-style: solid;
+  border-color: aliceblue;
+  margin: auto;
+  min-height: 100vh;
+}
 
 /*Estilos del formulario*/
 .contenedor{
@@ -149,11 +157,15 @@ body {
 /*Empieza la seccion del feed*/
 
 .main-content {
-  display: block;
   min-height: 100vh;
   background-color: #18191A;
+  flex-direction: row;
 }
-
+feed-page{ 
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  
+}
 
 /*Todo lo que va en el footer*/
 foot-page{
@@ -165,7 +177,9 @@ foot-page{
 }
 
 .footer{
-  position: absolute;
+  display: flex;
+  margin: auto;
+  /*position: absolute;*/
   width: 100%;
   background-color: #18191A;
   display: grid;
