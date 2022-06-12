@@ -4,7 +4,7 @@ body {
 	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
-	height: 100vh;
+	min-height: 100vh;
 }
 @keyframes gradient {
 	0% {
@@ -24,9 +24,13 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
+/*Estilos del header*/
+.fondo-xd{
+  background-color: #242526;
+  
+}
 .header {
- /* background-color: #333;*/
+  /* background-color: #333;*/
   width: 100%;
   height: 80px;
   display: flex;
@@ -37,6 +41,15 @@ body {
   font-size: 40px;
   color: aliceblue;
   padding: 10px 0px 10px 20px;
+}
+
+
+
+/*Estilos del formulario*/
+.contenedor{
+  position:relative;
+  /*padding-bottom: 3em;*/
+  min-height: 100vh;
 }
 .register-container {
   display: flex;
@@ -133,7 +146,16 @@ body {
   letter-spacing: 1px;
   margin: 20px 60px 30px 60px;
 }
+/*Empieza la seccion del feed*/
 
+.main-content {
+  display: block;
+  min-height: 100vh;
+  background-color: #18191A;
+}
+
+
+/*Todo lo que va en el footer*/
 .foot-page{
   color: white;
   display: flex;
@@ -142,9 +164,13 @@ body {
 }
 
 footer{
-  background-color: #333;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #18191A;
   display: grid;
   grid-template-columns: 1fr 1fr ;
+
   gap: 25px;
 }
 svg {
