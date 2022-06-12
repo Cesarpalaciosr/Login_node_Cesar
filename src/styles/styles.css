@@ -53,8 +53,7 @@ span{
 
 .division{border-width: 1px;
   border-style: solid;
-  border-color: aliceblue;
-  margin: auto;
+  border-color: rgb(85, 86, 86);
   min-height: 100vh;
 }
 
@@ -168,7 +167,8 @@ span{
 }
 feed-page{ 
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
+  
   
 }
 
