@@ -8,7 +8,7 @@ class feed_page extends HTMLElement {
         <div class = "division">    
         <section class = "panel-options">
                 <div>
-                    <h3>soy un panel</h3>
+                    <span>soy un panel</span>
                 </div>
             </section>
         </div>
@@ -16,14 +16,14 @@ class feed_page extends HTMLElement {
             <div class = "division">
         <section class = "panel-dashboard">
                 <div>
-                    <h3>soy un panel</h3>
+                    <span>soy un panel</span>
                 </div>
         </section>
         </div>
         <div class = "division">
         <section class = "panel-trending">
                 <div>
-                    <h3>soy un panel</h3>
+                    <span>soy un panel</span>
                 </div>
         </section>
         </div>

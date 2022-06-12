@@ -37,6 +37,11 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+/*color temporal para palabras */
+span{
+  color:white;
+}
 .tittle{
   font-size: 40px;
   color: aliceblue;
