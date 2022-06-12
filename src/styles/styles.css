@@ -181,7 +181,7 @@ foot-page{
 
 }
 
-.footer{
+footer{
   display: flex;
   margin: auto;
   /*position: absolute;*/
