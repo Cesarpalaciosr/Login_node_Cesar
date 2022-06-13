@@ -3,7 +3,7 @@ const app = express()
 const cors = require('cors')
 const port = 3000
 const person_tb = require('./server/utils/pgqueries')
-const { urlencoded, response } = require('express')
+
 /*
 app.get('/', (req, res) => {
     res.send('Hello World!')
