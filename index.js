@@ -55,6 +55,7 @@ app.get('/', (req, res) => {
   })
 })
 
+/*Registro y login metodo post */
 app.post('/persona', (req, res) => {
   //res.send(req.body)
     person_tb.createPerson(req.body)
@@ -65,6 +66,21 @@ app.post('/persona', (req, res) => {
       res.status(500).send(error);
     })
   })
+
+  app.post('/login', (req, res) => {
+
+    
+    //res.send(req.body)
+      person_tb.comprobatePerson(req.body)
+      .then(response => {
+        res.status(200).send(response);
+      })
+      .catch(error => {
+        res.status(500).send(error);
+      })
+    })
+  
+
 
   app.delete('/persona/:id_persona', (req, res) => {
     person_tb.deletePerson(req.params.id_persona)
