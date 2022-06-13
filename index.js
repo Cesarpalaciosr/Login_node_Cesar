@@ -3,7 +3,7 @@ const app = express()
 const cors = require('cors')
 const port = 3000
 const person_tb = require('./server/utils/pgqueries')
-const { urlencoded, response } = require('express')
+//const { urlencoded, response } = require('express')
 /*
 app.get('/', (req, res) => {
     res.send('Hello World!')
@@ -24,22 +24,24 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000/');
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000/test');
   */
+  //res.header("Access-Control-Allow-Origin",req.headers.origin);
  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
+  res.setHeader('Access-Control-Allow-Headers','application/json', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
   next();
 });
 
 
 app.post('/test', (req, res) => {
    var response = {
-    names : req.params.names,
+    names : req.body.names,
     age : req.body.age,
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
     id_person: req.body.id_person
   }
-  console.log(req.body);  
+
+  console.log(JSON.stringify(req.body));  
    //res.end(JSON.stringify(response));
    res.end();
   //res.json({requestBody: req.body})  // <==== req.body will be a parsed JSON object
@@ -57,7 +59,7 @@ app.get('/', (req, res) => {
 
 /*Registro y login metodo post */
 app.post('/persona', (req, res) => {
-  //res.send(req.body)
+  console.log(req.body)
     person_tb.createPerson(req.body)
     .then(response => {
       res.status(200).send(response);

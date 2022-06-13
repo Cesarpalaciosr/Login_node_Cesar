@@ -13,8 +13,9 @@ const createPerson = (body) => {
       //validar que el email no exista ya 
       //const oldUser = await User.findOne({ email });
     return new Promise(function(resolve, reject) {
-      const { names, age, username, email, password, id_person} = body
-      pool.query( 'INSERT INTO public.users (name, age, username, email, password, id_person) VALUES ($1, $2, $3, $4, $5, $6)', [names, age, username, email, password, id_person], (error, results) => {
+      
+      const { names, age, username, email, password, id_person, role} = body
+      pool.query( 'INSERT INTO public.users (name, age, username, email, password, id_person, role) VALUES ($1, $2, $3, $4, $5, $6, $7)', [names, age, username, email, password, id_person, role], (error, results) => {
         
         if (error) {
           reject(error)
@@ -26,14 +27,12 @@ const createPerson = (body) => {
 //URl Login server-postgres 
   const comprobatePerson = (body) => {
     return new Promise(function(resolve, reject) {
-      const {username, password} = body
-      
-      
+      const {username, password} = body   
       //poner encriptamiento de password
     
 
       //cambiar el query
-      pool.query( 'Select * from public.users WHERE username = $1, password = $2 VALUES ($1, $2)', [username, password], (error, results) => {
+      pool.query( 'Select role from public.users WHERE username = $1 AND password = $2 VALUES ($1, $2)', [username, password], (error, results) => {
         
         if (error) {
           reject(error)
