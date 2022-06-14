@@ -3,6 +3,8 @@ const app = express()
 const cors = require('cors')
 const port = 3000
 const person_tb = require('./server/utils/pgqueries')
+const cookieParser = require('cookie-parser')
+const session = require('express-session')
 /*
 app.get('/', (req, res) => {
     res.send('Hello World!')
@@ -15,8 +17,15 @@ app.get('/', (req, res) => {
 
 
 //app.use(express.urlencoded());
+app.use(cookieParser())
 app.use(cors())
 app.use(express.json())
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true
+}))
+
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
 /*  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000/persona');
