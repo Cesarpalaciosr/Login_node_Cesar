@@ -14,6 +14,7 @@ async function send(e) {
     data[pair[0]] = pair[1];
   }
   console.log(data);
+  json = JSON.stringify(data);
 
   var res = await fetch(API_url, {
     headers: {
@@ -22,14 +23,14 @@ async function send(e) {
     },
     method: "POST", // or 'PUT'
     
-    body:JSON.stringify(data),
+    body:json,
   }).catch((error) => console.error("Error:", error));
   
-  var response = await res.json();
+  var response = await res;
 
   if (response.status == 200) {
 	console.log(window.location)
-    window.location = "http://localhost:3000/views/feed.html";
+    window.location.href = "./feed.html";
   } else {
     console.log("No se pudo Registrar los datos");
   }

@@ -6,6 +6,7 @@ const pool = new Pool({
   password: 'masterkey',
   port: 5432,
 });
+var numrol= null;
 //'INSERT INTO persona (no_persona, ap_persona, ci_persona, sx_persona ) VALUES ($1, $2, $3,$4)'
 const createPerson = (body) => {
 
@@ -14,8 +15,8 @@ const createPerson = (body) => {
       //const oldUser = await User.findOne({ email });
     return new Promise(function(resolve, reject) {
       
-      const { names, age, username, email, password, id_person, role} = body
-      pool.query( 'INSERT INTO public.users (name, age, username, email, password, id_person, role) VALUES ($1, $2, $3, $4, $5, $6, $7)', [names, age, username, email, password, id_person, role], (error, results) => {
+      const { names, age, username, email, password, id_person} = body
+      pool.query( 'INSERT INTO public.users (name, age, username, email, password, id_person) VALUES ($1, $2, $3, $4, $5, $6)', [names, age, username, email, password, id_person], (error, results) => {
         
         if (error) {
           reject(error)
@@ -32,12 +33,12 @@ const createPerson = (body) => {
     
 
       //cambiar el query
-      pool.query( 'Select role from public.users WHERE username = $1 AND password = $2 VALUES ($1, $2)', [username, password], (error, results) => {
+      pool.query( 'Select roles from public.users WHERE username = $1 AND password = $2 ', [username, password], (error, results) => {
         
         if (error) {
           reject(error)
         }
-        resolve(`A new person has been added added: ${results.rows[0]}`)
+        resolve(results.rows)
       })
     })
   }
