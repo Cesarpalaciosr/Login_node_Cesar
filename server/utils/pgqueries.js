@@ -33,7 +33,7 @@ const createPerson = (body) => {
     
 
       //cambiar el query
-      pool.query( 'Select roles from public.users WHERE username = $1 AND password = $2 ', [username, password], (error, results) => {
+      pool.query( 'Select roles from public.users WHERE username = $1 AND password = $2', [username, password], (error, results) => {
         
         if (error) {
           reject(error)
