@@ -22,7 +22,7 @@ async function send(e) {
       'Content-Type': 'application/json'
     },
     method: "POST", // or 'PUT'
-    
+   // credentials: 'include',
     body:json,
   }).catch((error) => console.error("Error:", error));
   
@@ -32,6 +32,6 @@ async function send(e) {
 	console.log(window.location)
     window.location.href = "./feed.html";
   } else {
-    console.log("No se pudo Registrar los datos");
+    console.log("No se pudo loggear");
   }
 }
