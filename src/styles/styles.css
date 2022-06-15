@@ -51,7 +51,8 @@ span{
   padding: 10px 15px 10px 15px;
 }
 
-.division{border-width: 1px;
+.division{
+  border-width: 1px;
   border-style: solid;
   border-color: rgb(85, 86, 86);
   min-height: 100vh;
@@ -170,6 +171,68 @@ feed-page{
   grid-template-columns: repeat(3, 1fr);
   
   
+}
+/*OPciones panel izquierdo*/
+.panel-options{
+  grid-template-columns: subgrid;
+}
+ .options{
+  
+}
+
+nav a{
+  font-weight: 600;
+  padding-right: 10px;
+}
+
+nav a:hover{
+  color:white;
+}
+/*Dashboard*/
+
+.buscar{
+  display: flex;
+  justify-content: center;
+  /*position: absolute;*/
+  padding: 20px;
+  /*right: 600px;*/
+  /*bottom: 585px;*/
+}
+input, select, textarea{
+  color: #ff0000;
+}
+
+textPath:focus, input:focus {
+  color: #ff0000;
+}
+.buscar input{
+  background-color: #242526 ;
+  
+  width: 500px;
+  height: 45px;
+  padding: 0 10px;
+  font-size: 18px;
+  color: black;
+  outline: none;
+  border: 1px solid #18191A;
+  border-radius: 30px;
+  transition: all 0.6s ease;
+}
+
+.btn{
+  display: flex;
+  width: 55px;
+  height: 55px;
+  /*line-height: 55px;*/
+  top: 0;
+  right: 0;
+  /*position: absolute;*/
+  background: #242526;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 /*Todo lo que va en el footer*/

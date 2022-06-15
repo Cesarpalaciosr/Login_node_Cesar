@@ -6,7 +6,7 @@ const pool = new Pool({
   password: 'masterkey',
   port: 5432,
 });
-var numrol= null;
+//var numrol= null;
 //'INSERT INTO persona (no_persona, ap_persona, ci_persona, sx_persona ) VALUES ($1, $2, $3,$4)'
 const createPerson = (body) => {
 
