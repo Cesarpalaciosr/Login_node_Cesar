@@ -1,0 +1,151 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.3 (Ubuntu 14.3-0ubuntu0.22.04.1)
+-- Dumped by pg_dump version 14.3 (Ubuntu 14.3-0ubuntu0.22.04.1)
+
+-- Started on 2022-06-14 18:03:51 -04
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 211 (class 1259 OID 16411)
+-- Name: prueba; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.prueba (
+    nombre character varying(40) DEFAULT 'cesar'::character varying NOT NULL
+);
+
+
+ALTER TABLE public.prueba OWNER TO postgres;
+
+--
+-- TOC entry 210 (class 1259 OID 16402)
+-- Name: users; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.users (
+    id integer NOT NULL,
+    name character varying(40) NOT NULL,
+    age integer NOT NULL,
+    username character varying(40) NOT NULL,
+    email character varying(80) NOT NULL,
+    password character varying(80) NOT NULL,
+    id_person bigint NOT NULL,
+    roles integer DEFAULT 1 NOT NULL
+);
+
+
+ALTER TABLE public.users OWNER TO postgres;
+
+--
+-- TOC entry 209 (class 1259 OID 16401)
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.users_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.users_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 3403 (class 0 OID 0)
+-- Dependencies: 209
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
+
+
+--
+-- TOC entry 3251 (class 2604 OID 16405)
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
+
+
+--
+-- TOC entry 3397 (class 0 OID 16411)
+-- Dependencies: 211
+-- Data for Name: prueba; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.prueba (nombre) FROM stdin;
+ramon
+cesar
+cesar
+cesar
+cesar
+cesar
+cesar
+cesar
+cesar
+cesar
+\.
+
+
+--
+-- TOC entry 3396 (class 0 OID 16402)
+-- Dependencies: 210
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.users (id, name, age, username, email, password, id_person, roles) FROM stdin;
+20	cesar palacios	22	cesarp20	capr99@hotmail.com	cesar123	26514270	1
+21	cacaca	21	cesarp12	cesarglp@live.com	cacsacsacascsa	2311321321321	1
+23	cacaca	21	cesarp20122	cesarglp@live.com	cacscacascsa	213123213123131	1
+24	adadadad	2312	cesasasarp2012	cesarglp@live.com	acssacsasasa	21321321	1
+25	acascsa	21	sacassacsa	cesarglp@live.com	acassasa	231312321	1
+26	adadadad	21	cesasasarp2012	cacasscapr99@hotmail.com	csa2sasadsa	2131313213213	1
+29	cesarp2012	22	ceasrpawqw	casdasp@live.com	213123213132	2132133213	1
+30	cesarp22012	22	ceasrpawqw	casdasp@live.com	acascsaassac	213213321209	1
+31	cesarp222012	22	ceasrpawqw22	ceasadasda@hotmail.com	cacsasa	213132112222	1
+\.
+
+
+--
+-- TOC entry 3404 (class 0 OID 0)
+-- Dependencies: 209
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.users_id_seq', 31, true);
+
+
+--
+-- TOC entry 3255 (class 2606 OID 16407)
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id_person);
+
+
+-- Completed on 2022-06-14 18:03:52 -04
+
+--
+-- PostgreSQL database dump complete
+--
+
