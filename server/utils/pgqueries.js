@@ -1,11 +1,4 @@
-const Pool = require("pg").Pool;
-const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "db_users",
-  password: "27137766@Pg",
-  port: 5432,
-});
+const { pool } = require("./pool");
 //var numrol= null;
 //'INSERT INTO persona (no_persona, ap_persona, ci_persona, sx_persona ) VALUES ($1, $2, $3,$4)'
 const createPerson = (body) => {
