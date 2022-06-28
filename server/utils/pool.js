@@ -1,29 +1,9 @@
-const { Pool, Client } = require('pg')
-const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'db_users',
-    password: 'masterkey',
-    port: 5432,
-})
+const { Pool, Client } = require("pg");
 
-const client = new Client({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'db_users',
-    password: 'masterkey',
-    port: 5432,
-})
+const pool = new Pool();
+const client = new Client();
 
-function instance() {
-    const pool = new Pool({
-        user: 'postgres',
-        host: 'localhost',
-        database: 'db_users',
-        password: 'masterkey',
-        port: 5432,
-    })
-    return pool;
-}
-
-export default {pool, client};
+module.exports = {
+  pool: pool,
+  client: client,
+};

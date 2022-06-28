@@ -1,9 +1,5 @@
 var registerForm = document.getElementById("data-forms");
 
-var API_url = "http://localhost:3000/login";
-
-
-
 registerForm.addEventListener("submit", send);
 
 async function send(e) {
@@ -16,22 +12,22 @@ async function send(e) {
   console.log(data);
   json = JSON.stringify(data);
 
-  var res = await fetch(API_url, {
+  var res = await fetch("/api/login", {
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
     method: "POST", // or 'PUT'
-   // credentials: 'include',
-    body:json,
+    // credentials: 'include',
+    body: json,
   }).catch((error) => console.error("Error:", error));
-  
-  var response = await res;
+
+  var response = await res.json();
 
   if (response.status == 200) {
-	console.log(window.location)
     window.location.href = "./feed.html";
   } else {
+    alert(response.detail);
     console.log("No se pudo loggear");
   }
 }
