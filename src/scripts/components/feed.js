@@ -1,22 +1,3 @@
-//var logout = document.getElementById("logout");
-/*
-const serverUrl = "/api/logout/";
-const options = {
-    method: "POST"
-}
-async function send(e) {
-    e.preventDefault();
-
-var res = await fetch(serverUrl, options)
-    
-if (response.status == 200) {
-      window.location.href = "./login.html";
-    } else {
-      alert(response.detail);
-      console.log("idk");
-    }
-}
-*/
 class feed_page extends HTMLElement {
     constructor(){
         super();
@@ -30,14 +11,13 @@ class feed_page extends HTMLElement {
         <div class = "division">    
         <section class = "panel-options">
                 <div>
-                <nav>
+                <nav class = "nav-button">
                 <div class ="options">
-                    <a href="" class="nav-link">Inicio</a>
-                    <a href="" class="nav-link">Borrar</a>
-                    <a href="" class="nav-link">Actualizar</a>
-                    <a href="" class="nav-link">Ayuda</a>
-                    <a href="" class="nav-link">Salir</a>
-                    <button type="button" id = "logout" >logout</button> 
+                    <button class= "button" href="" class="nav-link">Inicio</button>
+                    <button class= "button" href="" class="nav-link">Borrar</button>
+                    <button class= "button" href="" class="nav-link">Actualizar</button>
+                    <button class= "button" href="" class="nav-link">Ayuda</button>
+                    <button class= "button" type="button" id = "logout" >logout</button> 
                     </nav>
                     </div>
                 </div>
@@ -50,8 +30,11 @@ class feed_page extends HTMLElement {
                     <div class="buscar">
                         <input class = "input" type="text" placeholder="Buscar">
                         <div class="btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 464c-114.7 0-208-93.31-208-208S141.3 48 256 48s208 93.31 208 208S370.7 464 256 464zM255.1 176C255.1 176 255.1 176 255.1 176c21.06 0 40.92 8.312 55.83 23.38c9.375 9.344 24.53 9.5 33.97 .1562c9.406-9.344 9.469-24.53 .1562-33.97c-24-24.22-55.95-37.56-89.95-37.56c0 0 .0313 0 0 0c-33.97 0-65.95 13.34-89.95 37.56c-49.44 49.88-49.44 131 0 180.9c24 24.22 55.98 37.56 89.95 37.56c.0313 0 0 0 0 0c34 0 65.95-13.34 89.95-37.56c9.312-9.438 9.25-24.62-.1562-33.97c-9.438-9.312-24.59-9.219-33.97 .1562c-14.91 15.06-34.77 23.38-55.83 23.38c0 0 .0313 0 0 0c-21.09 0-40.95-8.312-55.89-23.38c-30.94-31.22-30.94-82.03 0-113.3C214.2 184.3 234 176 255.1 176z"/></svg>
-                    </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="50" height="50"
+                        viewBox="-7 -5 60 60"
+                        style=" fill:#fffffff;"><path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path></svg>
+                        </div>
             </div>
                 </div>
         </section>
