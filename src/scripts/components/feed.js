@@ -1,15 +1,9 @@
-var logoutB = document.getElementById("logoutB");
+//var logout = document.getElementById("logout");
+/*
 const serverUrl = "/api/logout/";
 const options = {
     method: "POST"
 }
-
-
-class feed_page extends HTMLElement {
-    constructor(){
-        super();
-        logoutB.addEventListener("click", send);
-
 async function send(e) {
     e.preventDefault();
 
@@ -22,6 +16,13 @@ if (response.status == 200) {
       console.log("idk");
     }
 }
+*/
+class feed_page extends HTMLElement {
+    constructor(){
+        super();
+      /*  document.addEventListener("click", send);*/
+
+
     }
 
     connectedCallback(){
@@ -36,7 +37,7 @@ if (response.status == 200) {
                     <a href="" class="nav-link">Actualizar</a>
                     <a href="" class="nav-link">Ayuda</a>
                     <a href="" class="nav-link">Salir</a>
-                    <button type="button" id = "logoutB">logout</button> 
+                    <button type="button" id = "logout" >logout</button> 
                     </nav>
                     </div>
                 </div>
