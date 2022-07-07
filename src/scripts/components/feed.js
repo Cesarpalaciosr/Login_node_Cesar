@@ -1,6 +1,27 @@
+var logoutB = document.getElementById("logoutB");
+const serverUrl = "/api/logout/";
+const options = {
+    method: "POST"
+}
+
+
 class feed_page extends HTMLElement {
     constructor(){
         super();
+        logoutB.addEventListener("click", send);
+
+async function send(e) {
+    e.preventDefault();
+
+var res = await fetch(serverUrl, options)
+    
+if (response.status == 200) {
+      window.location.href = "./login.html";
+    } else {
+      alert(response.detail);
+      console.log("idk");
+    }
+}
     }
 
     connectedCallback(){
@@ -15,6 +36,7 @@ class feed_page extends HTMLElement {
                     <a href="" class="nav-link">Actualizar</a>
                     <a href="" class="nav-link">Ayuda</a>
                     <a href="" class="nav-link">Salir</a>
+                    <button type="button" id = "logoutB">logout</button> 
                     </nav>
                     </div>
                 </div>
@@ -41,6 +63,8 @@ class feed_page extends HTMLElement {
                 </div>
         </section>
         </div>
+        
+
             `   
     }
 }
