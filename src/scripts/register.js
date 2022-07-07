@@ -1,37 +1,36 @@
 var registerForm = document.getElementById("data-forms");
-var API_url = "http://localhost:3000/persona";
-
+var inputUsername = document.getElementById("input-username");
+var inputPassword = document.getElementById("input-password");
 
 registerForm.addEventListener("submit", send);
 
 async function send(e) {
   e.preventDefault();
-  var data = {};
-  var form = new FormData(registerForm);
-  for (var pair of form.entries()) {
-    data[pair[0]] = pair[1];
-  }
-  
-  console.log(data);
-  json = JSON.stringify(data);
 
-  console.log(json)
-  var res = await fetch(API_url, {
+  const data = {
+    username: inputUsername.value,
+    password: inputPassword.value,
+  };
+
+  var res = await fetch("/api/register", {
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
     method: "POST", // or 'PUT'
-    
-    body:json,
-  }).catch((error) => console.error("Error:", error));
-  
-  var response = await res;
 
-  if (response.status == 200) {
-	console.log(window.location)
+    body: JSON.stringify(data),
+  }).catch((error) => {
+    console.error("Error:", error);
+    alert(error.detail);
+  });
+
+  const response = await res.json();
+
+  if (response.status === 200) {
     window.location.href = "./views/login.html";
   } else {
+    alert(response.detail);
     console.log("No se pudo Registrar los datos");
   }
 }
