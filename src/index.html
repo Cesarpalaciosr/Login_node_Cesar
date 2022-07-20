@@ -1,75 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
-    <script src="./scripts/components/header.js"></script>
-    <script src="./scripts/components/footer.js"></script>
-    <title>Registro</title>
-  </head>
 
-  <body>
-    <header class="header">
-      <head-page></head-page>
-    </header>
-    <section class="contenedor">
-      <section class="register-container">
-        <section class="form-container">
-          <h4>REGISTRAR DATOS</h4>
-          <form id="data-forms">
-            <input
-              required
-              class="form-input"
-              type="text"
-              placeholder="Nombre"
-              name="name"
-            />
-            <input
-              required
-              class="form-input"
-              type="number"
-              placeholder="edad"
-              name="age"
-            />
-            <input
-              required
-              class="form-input"
-              type="text"
-              placeholder="Usuario"
-              name="username"
-            />
-            <input
-              required
-              class="form-input"
-              type="email"
-              placeholder="Correo"
-              name="email"
-            />
-            <input
-              required
-              class="form-input"
-              type="password"
-              placeholder="Contraseña"
-              name="password"
-            />
-            <input
-              required
-              class="form-input"
-              type="number"
-              placeholder="Cedula"
-              name="id_person"
-            />
-            <button class="button" id="register-button">REGISTRAR</button>
-          </form>
-          <span><a href="./views/login.html">¿Ya tienes cuenta?</a></span>
-        </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
+  <script src="./scripts/components/header.js"></script>
+  <script src="./scripts/components/footer.js"></script>
+  <title>Registro</title>
+</head>
+
+<body>
+  <header class="header">
+    <head-page></head-page>
+  </header>
+  <section class="contenedor">
+    <section class="register-container">
+      <section class="form-container">
+        <h4>REGISTRAR DATOS</h4>
+        <form id="data-forms">
+          <input required class="form-input" type="text" placeholder="Nombre" name="name" />
+          <input required class="form-input" type="number" placeholder="edad" name="age" />
+          <input required class="form-input" type="text" placeholder="Usuario" name="username" />
+          <input required class="form-input" type="email" placeholder="Correo" name="email" />
+          <input required class="form-input" type="password" placeholder="Contraseña" name="password" />
+          <input required class="form-input" type="number" placeholder="Cedula" name="id_person" />
+          <button class="button" id="register-button">REGISTRAR</button>
+        </form>
+        <span><a href="./views/login.html">¿Ya tienes cuenta?</a></span>
       </section>
     </section>
-    <footer class="footer">
-      <foot-page></foot-page>
-    </footer>
-    <script src="./scripts/register.js"></script>
-  </body>
+  </section>
+  <footer class="footer">
+    <foot-page></foot-page>
+  </footer>
+  <script src="./scripts/register.js"></script>
+</body>
+
 </html>
