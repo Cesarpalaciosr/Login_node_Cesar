@@ -1,6 +1,4 @@
 var registerForm = document.getElementById("data-forms");
-var API_url = "http://localhost:3000/login";
-
 
 registerForm.addEventListener("submit", send);
 
@@ -12,23 +10,24 @@ async function send(e) {
     data[pair[0]] = pair[1];
   }
   console.log(data);
+  json = JSON.stringify(data);
 
-  var res = await fetch(API_url, {
+  var res = await fetch("/api/login", {
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
     method: "POST", // or 'PUT'
-    
-    body:JSON.stringify(data),
+    // credentials: 'include',
+    body: json,
   }).catch((error) => console.error("Error:", error));
-  
+
   var response = await res.json();
 
   if (response.status == 200) {
-	console.log(window.location)
-    window.location = "http://localhost:3000/views/feed.html";
+    window.location.href = "./feed.html";
   } else {
-    console.log("No se pudo Registrar los datos");
+    alert(response.detail);
+    console.log("No se pudo loggear");
   }
 }

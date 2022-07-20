@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Mulish", sans-serif;
+  font-family: 'Helvetica', 'Arial','Mulish', sans-serif;
 	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
@@ -51,7 +51,8 @@ span{
   padding: 10px 15px 10px 15px;
 }
 
-.division{border-width: 1px;
+.division{
+  border-width: 1px;
   border-style: solid;
   border-color: rgb(85, 86, 86);
   min-height: 100vh;
@@ -170,6 +171,93 @@ feed-page{
   grid-template-columns: repeat(3, 1fr);
   
   
+}
+/*OPciones panel izquierdo*/
+.panel-options{
+  display: flex;
+}
+.options{
+  display: grid;
+  grid-template-columns: min-content;
+  justify-content: center;
+  row-gap: 10px;
+  
+}
+
+nav a{
+  font-weight: 600;
+  padding-right: 10px;
+}
+
+nav a:hover{
+  color:white;
+}
+/*Dashboard*/
+.nav-button{
+  padding-left: 10px ;
+}
+.button {
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  appearance: none;
+  background-color: #bb1066;
+  opacity: 0.9;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.buscar{
+  display: flex;
+  justify-content: center;
+  /*position: absolute;*/
+  padding: 20px;
+  color: white;
+  /*right: 600px;*/
+  /*bottom: 585px;*/
+}
+/*
+input, text{
+  color: #ff0000;
+}
+
+.text{
+  color: #fff
+}*/
+.buscar .input{
+  background-color: #242526 ;
+  
+  width: 500px;
+  height: 45px;
+  padding: 0 10px;
+  font-size: 18px;
+  color: white;
+  outline: none;
+  border: 1px solid #18191A;
+  border-radius: 30px;
+  transition: all 0.6s ease;
+}
+.input, text{
+  color: #fff;
+}
+.btn{
+  display: flex;
+  width: 55px;
+  height: 55px;
+  /*line-height: 55px;*/
+  top: 0;
+  right: 0;
+  /*position: absolute;*/
+  background: #242526;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 /*Todo lo que va en el footer*/

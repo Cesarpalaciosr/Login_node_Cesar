@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
-    <script src="../scripts/components/header.js"></script>
-    <script src="../scripts/components/footer.js"></script>
-    <title>Login</title>
-</head>
-<body>
-    <header class="header">
-        <head-page>
 
-        </head-page>
-    </header>  
-    <section class="contenedor">
-        <section class="login-container">
-            <section class="form-container">
-                <h4>Login</h4>
-                <form id="data-forms">
-                    <input required class="form-input" type="text" placeholder="Usuario" name="username" />
-                    <input required class="form-input" type="password" placeholder="Contraseña" name="pass" />
-                    <button class="button" id="login-button">INGRESAR</button>
-                </form>
-                <button class="button" id="inv-button">INGRESAR COMO INVITADO</button>
-                <span class="auth-text"><a class="auth-link" href="../index.html">¿No Tienes Cuenta?</a></span>
-            </section>
-        </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
+  <link rel="shortcut icon" href="#">
+  <script src="../scripts/components/header.js"></script>
+  <script src="../scripts/components/footer.js"></script>
+  <title>Login</title>
+</head>
+
+<body>
+  <header class="header">
+    <head-page> </head-page>
+  </header>
+  <section class="contenedor">
+    <section class="login-container">
+      <section class="form-container">
+        <h4>Login</h4>
+        <form id="data-forms">
+          <input required id="input-username" class="form-input" type="text" placeholder="Usuario" name="username" />
+          <input required id="input-password" class="form-input" type="password" placeholder="Contraseña"
+            name="password" />
+          <button class="button" id="login-button">INGRESAR</button>
+        </form>
+        <button class="button" id="inv-button">INGRESAR COMO INVITADO</button>
+        <span class="auth-text"><a class="auth-link" href="../index.html">¿No Tienes Cuenta?</a></span>
+      </section>
     </section>
-        <footer class="footer">
-       <foot-page></foot-page>
-    </footer>    
-    <script src="../scripts/login.js"></script>
+  </section>
+  <footer class="footer">
+    <foot-page></foot-page>
+  </footer>
+  <script src="../scripts/login.js"></script>
 </body>
+
 </html>

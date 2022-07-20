@@ -27,15 +27,6 @@ style=" fill:#undefined;"><g fill="none" fill-rule="nonzero" stroke="none" strok
             <span class="tittle_foot">Creadores: Cesar P</span>   
             </div>
         </div>
-        <div class = "colum">
-            <div class = "row">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-width="30" height="30"
-viewBox="0 0 171 171"
-style=" fill:#undefined;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99998v-171.99998h171.99998v171.99998z" fill="none"></path><path d="M0.49999,171.49999v-171h171v171z" fill="#cccccc"></path><g fill="#000000"><path d="M99.17986,103.74038v-9.1199c2.05198,-1.01687 7.92064,-8.00272 8.53623,-13.46098c1.61422,-0.12312 4.14956,-1.6051 4.89739,-7.45552c0.40128,-3.14181 -1.19471,-4.90651 -2.16142,-5.46282c0,0 2.40765,-4.57363 2.40765,-10.09573c0,-11.07156 -4.34563,-20.51979 -13.67986,-20.51979c0,0 -3.24213,-6.83993 -13.67986,-6.83993c-19.34332,0 -27.35971,12.40763 -27.35971,27.35971c0,5.03419 2.40765,10.09573 2.40765,10.09573c-0.96671,0.55631 -2.56269,2.32558 -2.16142,5.46282c0.74783,5.85042 3.28317,7.3324 4.89739,7.45552c0.61559,5.45826 6.48425,12.44411 8.53623,13.46098v9.1199c-4.55995,13.67986 -41.03957,4.55995 -41.03957,36.47962h109.43886c0,-31.91967 -36.47962,-22.79976 -41.03957,-36.47962z"></path></g></g></svg>
-            <span class="tittle_foot">Creadores: Jhonny L</span>   
-            </div>
-        </div>
             </section>
             `   
     }
