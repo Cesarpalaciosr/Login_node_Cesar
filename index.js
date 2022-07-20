@@ -1,13 +1,21 @@
+const pgqueries = require("./server/utils/pgqueries");
 const express = require("express");
 const app = express();
 const session = require("express-session");
 const cors = require("cors");
 const port = 3000;
 const cookieParser = require("cookie-parser");
-const pgqueries = require("./server/utils/pgqueries");
 const oneDay = 1000* 60 * 60 *24;
 
 // Middlewares
+app.use(session({
+  secret: "secret key",
+  saveUninitialized:false,
+  cookie: { path: '/', httpOnly:true, maxAge: oneDay, secure:true,  },
+  resave: false,
+})
+);
+app.use(express.json());
 app.use(express.static("src", { extensions: ["html"] }));
 app.use(cookieParser());
 app.use(cors());
@@ -21,14 +29,6 @@ app.use(function (req, res, next) {
   );
   next();
 });
-app.use(express.json());
-app.use(session({
-  secret: "secret key",
-  saveUninitialized:true,
-  cookie: { path: '/api/login', httpOnly:true, maxAge: oneDay, secure:true,  },
-  resave: false,
-})
-);
 // Función para limpiar la caché luego del logout
 app.use(function (req, res, next) {
   if (!req.user)
@@ -52,44 +52,9 @@ app.post("/api/test", (req, res) => {
 
   console.log(JSON.stringify(req.body));
   res.end();
-  //res.json({requestBody: req.body})  // <==== req.body will be a parsed JSON object
 });
 
 /*METODOS GET*/
-//get inutil xd
-app.get("/api/users", (req, res) => {
-  res.json("HOLA");
-  /*if (req.session.id == 1) {
-		res.end()
-    .render('index',{
-			login: true,
-			name: req.session.name			
-		});				
-	} else {
-		res.redirect('http://localhost:3000/views/feed.html',{
-			login:false,
-			name:req.session.name
-		});				
-	}
-	res.end();
-  
-  /*pgqueries.getPerson()
-  .then(response => {
-    res.status(200).json(response);
-  })
-  .catch(error => {
-    res.status(500).json({
-      detail: error
-    });
-  })*/
-});
-
-/*app.get('/logout', function (req, res) {
-	req.session.destroy(() => {
-	  res.redirect('../index.html') // siempre se ejecutará después de que se destruya la sesión
-	})
-});
-*/
 
 // POST /api/register
 app.post("/api/register", (req, res) => {
@@ -111,19 +76,17 @@ app.post("/api/register", (req, res) => {
 
 // POST /api/login
 app.post("/api/login", (req, res) => {
-  //res.json(req.body)
   pgqueries.comprobatePerson(req.body)
     .then((role) => {
       if(role == undefined){
         console.log('te la comes')
         res.status(403)
       } else{
-        req.session.regenerate(function(err){})
-        req.session.login = true;
+        req.session.login = 'logged';
         req.session.username = req.body.username;
         req.session.role = role;
         req.session.username = req.body.username
-        console.log(`${req.body.username},${req.session.username}, ${req.session}`)
+        console.log(`${req.session.username}, ${req.session}`)
                 res.status(200).json({
           status: 200,
           role: role,
@@ -153,7 +116,7 @@ app.get('/api/logout', (req, res) => {
       res.status(500).send('Could not log out.');
     } else {
       console.log('me voy a destruir')
-      res.status(200).send({});
+      res.status(200).send('login');
     }
   });
 });

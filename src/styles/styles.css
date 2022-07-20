@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Mulish", sans-serif;
+  font-family: 'Helvetica', 'Arial','Mulish', sans-serif;
 	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
@@ -174,11 +174,15 @@ feed-page{
 }
 /*OPciones panel izquierdo*/
 .panel-options{
-  grid-template-columns: subgrid;
+  display: flex;
 }
- /*.options{
+.options{
+  display: grid;
+  grid-template-columns: min-content;
+  justify-content: center;
+  row-gap: 10px;
   
-}*/
+}
 
 nav a{
   font-weight: 600;
@@ -189,7 +193,24 @@ nav a:hover{
   color:white;
 }
 /*Dashboard*/
-
+.nav-button{
+  padding-left: 10px ;
+}
+.button {
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  appearance: none;
+  background-color: #bb1066;
+  opacity: 0.9;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
 .buscar{
   display: flex;
   justify-content: center;
@@ -231,7 +252,7 @@ input, text{
   top: 0;
   right: 0;
   /*position: absolute;*/
-  background: #153453;
+  background: #242526;
   text-align: center;
   color: white;
   font-size: 18px;
